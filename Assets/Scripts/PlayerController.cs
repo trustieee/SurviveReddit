@@ -140,6 +140,7 @@ public class PlayerController : MonoBehaviour
         else if (Input.GetButton("Reload") && CurrentWeapon is ProjectileWeaponBase && !mIsMenuShowing && !mIsReloading)
         {
             StartCoroutine(PerformReload());
+			DefaultWeaponPosition.gameObject.animation.Play("DefaultReload");
         }
         else if (Input.GetButton("Fire1") && CurrentWeapon != null && !mInventory.IsInventoryShowing && !mIsMenuShowing && Time.time > mNextFire && !mVitalsController.IsDead && !mIsReloading)
         {
@@ -210,14 +211,15 @@ public class PlayerController : MonoBehaviour
             }
 
             WeaponSocket.transform.position = Vector3.Lerp(WeaponSocket.transform.position, AimedWeaponPosition.position, .25f);
+			WeaponSocket.transform.rotation = AimedWeaponPosition.rotation;
         }
         else if (Input.GetButton("Weapon1"))
         {
-            EquipWeapon(1);
+			EquipWeapon(1);
         }
         else if (Input.GetButton("Weapon2"))
         {
-            EquipWeapon(2);
+			EquipWeapon(2);
         }
         else
         {
@@ -230,6 +232,7 @@ public class PlayerController : MonoBehaviour
                 Camera.main.fieldOfView = mNormalFOV;
             }
             WeaponSocket.transform.position = Vector3.Lerp(WeaponSocket.transform.position, DefaultWeaponPosition.position, .25f);
+			WeaponSocket.transform.rotation = DefaultWeaponPosition.rotation;
         }
     }
 
