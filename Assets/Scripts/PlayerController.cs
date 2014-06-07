@@ -159,6 +159,8 @@ public class PlayerController : MonoBehaviour
                     // We have ammo, decrement ammo and perform firing logic.
                     projectileWeapon.AmmoInClip--;
                     mInventory.RemoveOneItemFromStack(mInventory.inventory.Where(item => item.TheItemType == Item.ItemType.Ammo).FirstOrDefault().itemID);
+					DefaultWeaponPosition.gameObject.animation.Play ("DefaultFireWeapon");
+					AimedWeaponPosition.gameObject.animation.Play ("AimedFireWeapon");
                     audio.PlayOneShot(CurrentWeapon.FireSound);
 
                     Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0.0f));
