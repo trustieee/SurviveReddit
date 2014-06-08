@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -298,14 +298,14 @@ public class PlayerController : MonoBehaviour
                 GetComponent<FPSInputController>().enabled = false;
                 if (mIsMenuShowing && GUI.Button(new Rect(Screen.width/2 - 50, Screen.height/2 - 50, 250, 250), "You have died... Quit"))
                 {
-                    ApplicationHelper.Quit();
+					Application.LoadLevel (0);
                 }
             }
             else
             {
                 if (mIsMenuShowing && GUI.Button(new Rect(Screen.width/2 - 50, Screen.height/2 - 50, 250, 250), "Quit"))
                 {
-                    ApplicationHelper.Quit();
+					Application.LoadLevel (0);
                 }
             }
         }
@@ -338,7 +338,7 @@ public class PlayerController : MonoBehaviour
     }
 }
 
-public static class ApplicationHelper
+/*public static class ApplicationHelper
 {
     public static void Quit()
     {
@@ -348,4 +348,4 @@ public static class ApplicationHelper
         Application.Quit();
 #endif
     }
-}
+}*/

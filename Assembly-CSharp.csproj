@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\ItemRemover.cs" />
      <Compile Include="Assets\Scripts\ItemSpawnController.cs" />
      <Compile Include="Assets\Scripts\ItemSpawner.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\ObjectInventory.cs" />
      <Compile Include="Assets\Scripts\OnScreenMessages.cs" />
      <Compile Include="Assets\Scripts\ParticleDestroy.cs" />
