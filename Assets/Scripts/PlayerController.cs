@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private float mNextMenuToggle;
     public float mNormalFOV;
     private VitalsController mVitalsController;
+    public int Dollars;
 
     public bool IsMenuShowing
 

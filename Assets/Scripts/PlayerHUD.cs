@@ -14,8 +14,10 @@ public class PlayerHUD : MonoBehaviour
     private void OnGUI()
     {
         GUIText bloodGui = GameObject.Find("BloodGuiText").guiText;
+        GUIText moneyGui = GameObject.Find("MoneyGuiText").guiText;
 
         int blood = mVitalsController.CoreVitals.Blood;
+        int money = mPlayerController.Dollars;
 
         GUIText currentAmmoGui = GameObject.Find("CurrentAmmoText").guiText;
         GUIText maxAmmoGui = GameObject.Find("MaxAmmoText").guiText;
@@ -42,5 +44,8 @@ public class PlayerHUD : MonoBehaviour
         else bloodGui.color = Color.white;
 
         bloodGui.text = string.Format("Blood       {0}", blood);
+
+        // Dollars
+        moneyGui.text = string.Format("$ {0}", money);
     }
 }
