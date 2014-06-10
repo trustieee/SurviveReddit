@@ -5,6 +5,7 @@ public class Zombie : MonoBehaviour
     public int AttackDamage = 25;
 	public int WallAttackDamage = 5;
     public float AttackRange = 3.0f;
+	private float WallAttackRange = 5.0f;
     public AudioClip AttackSound;
     public float AttackSpeed = 2.0f;
     public float ChaseDistance = 10.0f;
@@ -127,7 +128,7 @@ public class Zombie : MonoBehaviour
 
 			if (!mDestructibleController.IsActive){
 				mIsChasingPlayer = true;
-			} else if (Vector3.Distance (gameObject.transform.position, mDestructibleController.transform.position) < AttackRange){
+			} else if (Vector3.Distance (gameObject.transform.position, mDestructibleController.transform.position) < WallAttackRange){
 				AttackWall ();
 			}
 		
@@ -166,7 +167,7 @@ public class Zombie : MonoBehaviour
 						mNextAttack = Time.time + AttackSpeed;
 						audio.PlayOneShot (AttackSound);
 						mDestructibleController.CurrentHealth -= WallAttackDamage;
-						print (string.Format ("Zombie hit Wall for {0} damage", AttackDamage));
+						print (string.Format ("Zombie hit Wall for {0} damage", WallAttackDamage));
 				}
 		}
 	
