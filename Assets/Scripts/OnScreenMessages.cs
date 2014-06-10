@@ -20,7 +20,7 @@ public class OnScreenMessages : MonoBehaviour {
 
 		if (mDisplayMessage) {
 
-			GUI.Label(new Rect(Screen.width * .5f - 50f, Screen.height * .5f - 10f, 100f, 20f), mMessage);
+			GUI.Label(new Rect(Screen.width * .5f - 50f, Screen.height * .5f - 200f, 100f, 20f), mMessage);
 
 			if (Time.time > mDisplayTime){
 

@@ -7,11 +7,13 @@ public class GameController : MonoBehaviour {
 	private SpawnController mSpawnControl;
 	public List <Vector3> Waves;
 	public float ScavengeDuration;
+	public Vector2[] ItemsToGrant;
 	private float ScavengeTime;
 	private int StageNumber;
 	private GameObject mPlayer;
 	private ItemSpawnController mItemSpawnController;
 	private OnScreenMessages mOnScreenMessages;
+	public ObjectInventory mMainChest;
 	public bool SpawnActive;
 	public bool ScavengeActive;
 	public Transform TeleportLocation;
@@ -66,6 +68,7 @@ public class GameController : MonoBehaviour {
 		ScavengeActive = true;
 		ScavengeTime = Time.time + ScavengeDuration;
 		mItemSpawnController.SpawnItems ();
+		mMainChest.AddItems (ItemsToGrant);
 
 	}
 }
