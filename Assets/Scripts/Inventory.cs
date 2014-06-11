@@ -360,7 +360,7 @@ public class Inventory : MonoBehaviour
 
     //method to check if the iventory is current filled
 
-    private bool InventoryFilled()
+    public bool InventoryFilled()
     {
         int curFilled = 0;
 
